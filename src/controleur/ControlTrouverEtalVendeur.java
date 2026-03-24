@@ -1,5 +1,6 @@
 package controleur;
 
+import personnages.Gaulois;
 import villagegaulois.Etal;
 import villagegaulois.Village;
 
@@ -11,8 +12,12 @@ public class ControlTrouverEtalVendeur {
 	}
 
 	public Etal trouverEtalVendeur(String nomVendeur) {
-		//TODO a completer
-		Etal etal = null;
+		Gaulois lionelMessi = village.trouverHabitant(nomVendeur);
+		Etal etal=null;
+		if (lionelMessi!=null) {
+			etal = village.rechercherEtal(lionelMessi);
+		}
 		return etal;
 	}
 }
+//ON EST INTERDIT D'IMPORTER GAULOIS ?????
