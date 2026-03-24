@@ -28,6 +28,6 @@ public class BoundaryPrendreEtal {
 		question2.append("Combien souhaitez-vous en vendre ?");
 		int quantite = Clavier.entrerEntier(question2.toString());
 		int numeroEtal= controlPrendreEtal.prendreEtal(nomVendeur, reponse, quantite);
-		if (numeroEtal!=-1) System.out.println("Le vendeur "+ nomVendeur+ " s'est installé à l'étal n°"+numeroEtal);
+		if (numeroEtal!=-1) System.out.println("Le vendeur "+ nomVendeur+ " s'est installé à l'étal n°"+(numeroEtal+1));
 	}
 }
