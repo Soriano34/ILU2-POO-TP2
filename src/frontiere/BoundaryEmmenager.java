@@ -1,5 +1,9 @@
 package frontiere;
 
+import java.security.UnrecoverableEntryException;
+
+import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
+
 import controleur.ControlEmmenager;
 
 public class BoundaryEmmenager {
@@ -27,7 +31,12 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					System.out.println("Bienvenue villageois "+nomVisiteur);
+					StringBuilder question2 = new StringBuilder();
+					question2.append("Quelle est votre force ?");
+					int choixForce=-1;
+					choixForce=Clavier.entrerEntier(question2.toString());
+					controlEmmenager.ajouterGaulois(nomVisiteur, choixForce);
 					break;
 
 				default:
@@ -40,6 +49,22 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-		//TODO a completer
+		System.out.println("Bienvenue druide "+ nomVisiteur);
+		StringBuilder question = new StringBuilder();
+		question.append("Quelle est votre force ?");
+		int choix=-1; 
+		choix = Clavier.entrerEntier(question.toString());
+		StringBuilder question1= new StringBuilder();
+		StringBuilder question2= new StringBuilder();
+		question1.append("Quelle est la force de votre potion la plus forte que vous produisez ?");
+		question2.append("Quelle est la force de votre potion la plus faible que vous produisez ? ");
+		int effetPotionMin=-1, effetPotionMax=-2;
+		while (effetPotionMax< effetPotionMin) {
+			effetPotionMin= Clavier.entrerEntier(question2.toString());
+			effetPotionMax= Clavier.entrerEntier(question1.toString());
+		if (effetPotionMax<effetPotionMin) System.out.println("Attention Druide, vous vous êtes trompé entre le maximum et le minimum.");
+		}
+		controlEmmenager.ajouterDruide(nomVisiteur, choix, effetPotionMin, effetPotionMax);
+
 	}
 }
