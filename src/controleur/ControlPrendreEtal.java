@@ -20,7 +20,7 @@ public class ControlPrendreEtal {
 	public int prendreEtal(String nomVendeur, String produit, int nbProduit) {
 		Gaulois gerard= village.trouverHabitant(nomVendeur);
 		int numeroEtal = village.installerVendeur(gerard, produit, nbProduit);
-		return numeroEtal;
+		return (numeroEtal+1);
 	}
 
 	public boolean verifierIdentite(String nomVendeur) {

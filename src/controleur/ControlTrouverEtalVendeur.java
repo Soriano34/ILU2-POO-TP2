@@ -20,4 +20,3 @@ public class ControlTrouverEtalVendeur {
 		return etal;
 	}
 }
-//ON EST INTERDIT D'IMPORTER GAULOIS ?????
